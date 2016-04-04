@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg4988"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   viewBox="0 0 48 48"
+   width="48"
+   height="48"
+   sodipodi:docname="leaficon2.svg">
+  <metadata
+     id="metadata4994">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs4992" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1916"
+     inkscape:window-height="1164"
+     id="namedview4990"
+     showgrid="false"
+     inkscape:zoom="28.667287"
+     inkscape:cx="17.354168"
+     inkscape:cy="16.296623"
+     inkscape:window-x="1920"
+     inkscape:window-y="34"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg4988"
+     showguides="true"
+     inkscape:guide-bbox="true" />
+  <path
+     style="fill:#000000"
+     d="M 23.243761,0.06762532 C 17.552112,0.21034292 11.800333,2.4173024 7.0875106,7.1301253 -4.8676363,19.085271 -1.0978943,39.092781 14.46251,46.161375 c 5.220001,2.37128 13.8425,2.37128 19.062501,0 8.779363,-3.988183 14.4375,-12.653339 14.4375,-22.125 0,-14.6604221 -12.197124,-24.28272848 -24.71875,-23.96874968 z m -0.09375,4.21874998 c 1.233564,-0.058194 2.488948,0.019288 3.71875,0.25 13.403299,2.514474 20.690243,16.7731827 14.59375,28.5624997 -2.028582,3.922845 -7.905318,8.685828 -12.1875,9.875 -5.819795,1.61617 -15.317095,-0.766439 -15.909079,-2.703462 1.569937,0.03667 4.066183,-1.268252 5.129786,-1.586933 1.458254,-0.634973 3.016663,-1.614348 4.469139,-2.525227 1.086293,-0.681239 2.982937,-2.308655 3.070423,-2.365402 0.668395,-0.433546 1.880666,0.253273 2.770981,0.243524 4.175804,0 6.1875,-3.103172 6.1875,-9.59375 0,-7.363782 -0.991075,-11.40625 -2.78125,-11.40625 -2.520863,0 -10.27643,7.006591 -12.031251,10.875 -1.215269,1.877858 -0.773328,4.355379 -0.744027,5.225376 0.507037,2.992617 5.393407,3.366501 4.596624,4.368014 -0.997476,1.201884 -2.693205,2.687406 -5.275854,3.15515 -0.610125,0.1105 -1.546352,-1.03371 -1.787827,-1.42629 -0.193887,-0.315214 0.405018,-0.779041 0.613382,-1.286296 1.938779,-3.428363 0.608731,-6.520303 -1.904064,-8.514532 l -2.90625,-2.78125 -1.15625,2.125 c -1.8721504,3.498147 -1.194213,8.468163 1.672245,9.889532 0.865043,0.428942 2.46003,0.599005 2.861577,1.081789 0.283508,0.340864 1.183551,1.340032 1.157498,1.679445 -0.06731,0.876932 -2.454221,1.209589 -3.939554,1.421562 C 8.6727458,39.519048 3.1251992,28.456435 4.4937606,21.161375 6.2400681,11.852757 14.515065,4.6937329 23.150011,4.2863753 z"
+     id="leaficon"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ssssssssssccsscsscccssccccssssss"
+     inkscape:label="#leaficon" />
+</svg>

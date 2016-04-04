@@ -1,0 +1,13 @@
+<!-- ===================== $content.name Start ===================== -->
+#set($searchQuery = $m.request.httpRequest.getParameter("q"))
+<$content.element.value class="$!content.elementCssClassName.value">
+    #if ($content.isMainSection.checked && !$m.context.page.pathAfterPage.empty)
+		#render({"content": $m.context.page.pathAfterPage.get(0)})
+    #elseif ($content.isMainSection.checked && $m.context.page.pathAfterPage.empty && "$!searchQuery" != "")
+		#render({"content": $content, "outputTemplate": "com.atex.plugins.search.SearchResults.ot" })
+	#elseif (!$content.isMainSection.checked || $m.context.page.pathAfterPage.empty)
+    	#render({"content": $content.main})
+	#end
+</$content.element.value>
+	
+<!-- ===================== $content.name End ===================== -->

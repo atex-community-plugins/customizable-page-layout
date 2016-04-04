@@ -1,0 +1,10 @@
+<ul class="$content.cssClass.value">
+	#foreach($topPage in $m.local.topPages)
+		#if($m.context.page.contentPath.contains($topPage.contentId.contentId))
+			#set($active = " class='active'")
+		#else
+			#set($active = "")
+		#end
+	<li$!active><a href="#link({"path": $p_path.resolve($topPage.contentId), 'htmlEncodeLink': 'true'})">$topPage.name</a></li>
+	#end
+</ul>

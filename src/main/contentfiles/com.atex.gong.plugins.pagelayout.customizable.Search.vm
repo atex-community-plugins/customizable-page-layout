@@ -1,0 +1,11 @@
+#set($searchQuery = $m.request.httpRequest.getParameter("q"))
+#set($searchPage = $m.context.page.contentPath.last)
+<section class="$content.cssClass.value">
+    #render({"content": $content, "outputTemplate": "com.atex.plugins.search.SearchForm.ot", "params":{"searchPage": $searchPage}})
+</section>
+
+<section class='right-slot'>
+	#if("$searchQuery" != "")
+		#render({"content": $content, "outputTemplate": "com.atex.plugins.search.SearchResults.facets.ot" })
+	#end
+</section>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <link rel="shortcut icon" href="#file({'contentId': $filesContentId, 'filename':'/favicon16.png'})" sizes="16x16">
+    <link rel="icon" href="#file({'contentId': $filesContentId, 'filename':'/favicon32.png'})" sizes="32x32">
+
+    #set($searchPage = $m.context.site.top.content.pageLayout.selected.result-page.selected.contentId)
+    #set($searchQuery = $m.request.httpRequest.getParameter("q"))
+
+    #set($pageTitle = $!m.context.page.bean.name)
+    #set($siteTitle = $!m.context.site.bean.name)
+    #if($!pageTitle != "" && $!pageTitle != $!siteTitle)
+        #set($pageTitle = $!siteTitle + " - " + $!pageTitle)
+    #else
+        #set($pageTitle = $!siteTitle)
+    #end
+    <title>$!pageTitle</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,700,300' rel='stylesheet' type='text/css'>
+
+    #if(!$m.request.preview.inPreviewMode)
+      #renderwithfallback({"content": $content.analyticsHead})
+      #end
+    #end
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    #p_header_resources()
+
+    #foreach($stylesheetContentId in $m.context.page.layout.stylesheets)
+      <link rel="stylesheet" type="text/css" href="#link({"contentId": $stylesheetContentId, 'htmlEncodeLink': 'true'})">
+    #end
+
+    <script type="text/javascript" src="/js/com.atex.gong.paywall.membership.js"></script>
+  </head>
+  <body>
+
+  #if(!$m.request.preview.inPreviewMode)
+    #renderwithfallback({"content": $content.analyticsBodyTop})
+    #end
+  #end
+
+  <div class="navbar navbar-custom navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <span class="logo"></span>
+          <a class="navbar-brand" href="#link({"contentId": $m.context.page.contentPath.headContent, 'htmlEncodeLink': 'true'})">
+            <img class="logo" src="#file({'contentId': $filesContentId, 'filename':'/leaficon.svg'})" alt="AtexCMS">
+            $m.context.site.bean.name
+          </a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <div class="navbar-form navbar-right" role="form">
+            <div class="form-group">
+              ## #render({"outputTemplate": "com.atex.plugins.persona.LoginLogout.ot", "content":$content})
+            </div>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+            #foreach($topPage in $m.local.topPages)
+              #if($m.context.page.contentPath.contains($topPage.contentId.contentId))
+                #set($active = " class='active'")
+              #else
+                #set($active = "")
+              #end
+              <li$!active><a href="#link({"path": $p_path.resolve($topPage.contentId), 'htmlEncodeLink': 'true'})">$topPage.name</a></li>
+            #end
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          #if(!$m.context.page.pathAfterPage.empty)
+          <div class="default-layout">
+            <section class='article-header'>
+              #renderwithfallback({"content": $content.articleHeader})
+              #end
+            </section>
+            <section class='article'>
+              #render({"content": $m.context.page.pathAfterPage.get(0)})
+            </section>
+            <section class='article-footer'>
+              #renderwithfallback({"content": $content.articleFooter})
+              #end
+            </section>
+          </div>
+          #else
+          <section class='main-slot'>
+            #if("$!searchQuery" != "")
+              #render({"content": $content, "outputTemplate": "com.atex.plugins.search.SearchResults.ot" })
+            #elseif($content.left)
+              #render({"content": $content.left})
+            #end
+          </section>
+          #end
+        </div>
+        <div class="col-md-4">
+          #set($currentPage = $m.context.site.bean.contentId.contentId.contentIdString)
+          #if ("$!m.context.page" != "")
+            #set($currentPage = $m.context.page.bean.contentId.contentId.contentIdString)
+          #end
+          <section class="search-section">$searchPage
+            #render({"content": $content, "outputTemplate": "com.atex.plugins.search.SearchForm.ot", "params":{"searchPage": $searchPage}})
+          </section>
+          <section class='right-top-slot'>
+            #if((!$searchQuery || $searchQuery.trim().isEmpty()) && $content.right)
+              #renderwithfallback({"content": $content.rightTop})
+              #end
+      #end
+          </section>
+          <section class='right-slot'>
+            #if((!$searchQuery || $searchQuery.trim().isEmpty()) && $content.right)
+              #render({"content": $content.right})
+            #elseif("$searchQuery" != "")
+              #render({"content": $content, "outputTemplate": "com.atex.plugins.search.SearchResults.facets.ot" })
+      #end
+          </section>
+          <section class='right-bottom-slot'>
+            #if((!$searchQuery || $searchQuery.trim().isEmpty()) && $content.right)
+              #renderwithfallback({"content": $content.rightBottom})
+              #end
+      #end
+          </section>
+          <section class='right-ads'>
+            #render({"content": $content, "outputTemplate": "com.atex.plugins.personalization.Banner.ot"})
+          </section>
+        </div>
+      </div>
+      <section class='bottom-ads'>
+        #render({"content": $content, "outputTemplate": "com.atex.plugins.personalization.Banner.ot"})
+      </section>
+      <footer>
+        <p>&copy; NMZE. $date.get("yyyy")</p>
+      </footer>
+    </div>
+  #p_footer_resources()
+  <script>
+      #set($ratios = [1, 2])
+      #set($widths = [57, 90, 188, 360, 750])
+      new Imager({
+        lazyload:true,
+        availableWidths: function(image) {
+          var params = {
+            #foreach($ratio in $ratios)
+                #set($ratioHasNext = $velocityHasNext)
+                #foreach($width in $widths)
+                    #set($imageWidth = $math.round($math.mul($ratio, $width)))
+                    #set($query = $tool_img.getQueryBuilder().width($imageWidth).build())
+                    $imageWidth : '$query' #if( $ratioHasNext || $velocityHasNext ),#end
+                #end
+            #end
+          };
+
+          var containerWidth = image.clientWidth;
+          var ratio = Imager.getClosestValue(Imager.getPixelRatio(), $ratios);
+          var width = Imager.getClosestValue(containerWidth, $widths);
+
+          var imageWidth = Math.round(width * ratio);
+          return params[imageWidth];
+        }
+      });
+  </script>
+  
+  #if(!$m.request.preview.inPreviewMode)
+    #renderwithfallback({"content": $content.analyticsBodyBottom})
+    #end
+  #end
+
+  #if(!$m.request.preview.inPreviewMode)
+    #log({"statisticsContext": $m.request.statisticsContext})
+  #end
+  </body>
+</html>

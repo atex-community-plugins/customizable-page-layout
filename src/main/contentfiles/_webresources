@@ -1,0 +1,9 @@
+# This file lists web resources of this plugin that should be rendered on all
+# pages. See "Plugin contributed web resources" on http://support.polopoly.com for
+# documentation.
+
+# The example plugin style. Compiled from style.less.
+#/style.css
+
+# The persona callback mapping javascript. Compressed and renamed from persona.js.
+/aimatch_ad_server.min.js

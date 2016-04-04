@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <link rel="shortcut icon" href="#file({'contentId': $filesContentId, 'filename':'/favicon16.png'})" sizes="16x16">
+    <link rel="icon" href="#file({'contentId': $filesContentId, 'filename':'/favicon32.png'})" sizes="32x32">
+
+    #set($searchPage = $m.context.site.top.content.pageLayout.selected.result-page.selected.contentId)
+    #set($searchQuery = $m.request.httpRequest.getParameter("q"))
+
+    #set($pageTitle = $!m.context.page.bean.name)
+    #set($siteTitle = $!m.context.site.bean.name)
+    #if($!pageTitle != "" && $!pageTitle != $!siteTitle)
+        #set($pageTitle = $!siteTitle + " - " + $!pageTitle)
+    #else
+        #set($pageTitle = $!siteTitle)
+    #end
+    <title>$!pageTitle</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,700,300' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    #p_header_resources()
+
+    #foreach($stylesheetContentId in $m.context.page.layout.stylesheets)
+      <link rel="stylesheet" type="text/css" href="#link({"contentId": $stylesheetContentId, 'htmlEncodeLink': 'true'})">
+    #end
+
+    <script type="text/javascript" src="/js/com.atex.gong.paywall.membership.js"></script>
+  </head>
+  <body>
+	#render({"content": $!content.header})
+    #render({"content": $!content.main})
+	#render({"content": $!content.footer})
+	#p_footer_resources()
+  </body>
+</html>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template-definition version="1.0" xmlns="http://www.polopoly.com/polopoly/cm/app/xml">
+  <!--This file contains input template definitions -->
+  <input-template name="com.atex.gong.plugins.pagelayout.PageLayout">
+    <policy>com.polopoly.siteengine.standard.content.ContentBasePolicy</policy>
+    <editor>com.polopoly.cm.app.widget.OTopPolicyWidget</editor>
+    <viewer>com.polopoly.cm.app.widget.OTopPolicyWidget</viewer>
+    <content-xml>
+      <component group="polopoly.Content" name="name">Default page layout</component>
+    </content-xml>
+    <layout name="menu" input-template="p.AjaxPageMenu">
+
+      <layout name="main" input-template="p.Page" label="com.atex.gong.plugins.pagelayout.MainAndRightColumns">
+        <layout name="columns" input-template="p.ColumnHolder">
+          <layout name="col-left" input-template="p.Column">
+            <param name="width">60</param>
+            <param name="widthRelative">true</param>
+            <layout name="left" input-template="p.LabeledSection" label="com.atex.gong.plugins.pagelayout.MainSlot">
+              <field name="left" input-template="p.siteengine.layout.Slot.it">
+                <param name="defaultInheritSetting">false</param>
+                <param name="displayInheritSetting">false</param>
+              </field>
+            </layout>
+          </layout>
+          <layout name="col-right" input-template="p.Column">
+            <layout name="rightTop" input-template="p.LabeledSection" label="com.atex.gong.plugins.pagelayout.RightTopSideSlot">
+              <field name="rightTop" input-template="p.siteengine.layout.Slot.it">
+                <param name="defaultInheritSetting">true</param>
+                <param name="displayInheritSetting">true</param>
+              </field>
+            </layout>
+            <layout name="right" input-template="p.LabeledSection" label="com.atex.gong.plugins.pagelayout.RightSideSlot">
+              <field name="right" input-template="p.siteengine.layout.Slot.it">
+                <param name="defaultInheritSetting">true</param>
+                <param name="displayInheritSetting">true</param>
+              </field>
+            </layout>
+            <layout name="rightBottom" input-template="p.LabeledSection" label="com.atex.gong.plugins.pagelayout.RightBottomSideSlot">
+              <field name="rightBottom" input-template="p.siteengine.layout.Slot.it">
+                <param name="defaultInheritSetting">true</param>
+                <param name="displayInheritSetting">true</param>
+              </field>
+            </layout>
+          </layout>
+        </layout>
+      </layout>
+
+      <layout name="articleHeader" input-template="p.Page" label="com.atex.gong.plugins.pagelayout.ArticleCommon">
+        <layout name="articleHeader-main" input-template="p.LabeledSection" label="com.atex.gong.plugins.pagelayout.ArticleHeaderSlot">
+          <field name="articleHeader" input-template="p.siteengine.layout.Slot.it">
+            <param name="defaultInheritSetting">true</param>
+            <param name="displayInheritSetting">true</param>
+          </field>
+        </layout>
+        <layout name="article-footer-label" input-template="p.LabeledSection" label="com.atex.gong.plugins.pagelayout.ArticleFooterSlot">
+          <field name="articleFooter" input-template="p.siteengine.layout.Slot.it">
+            <param name="defaultInheritSetting">true</param>
+            <param name="displayInheritSetting">true</param>
+          </field>
+        </layout>
+      </layout>
+      
+      <layout name="secondary-page" input-template="p.Page" label="com.atex.gong.plugins.pagelayout.Settings">
+        <layout name="searchSettings" input-template="p.LabeledSection" label="com.atex.gong.plugins.pagelayout.SearchSettings">
+          <field name="result-page" input-template="p.SelectableSubField" label="com.atex.gong.plugins.pagelayout.SearchElement.resultPage">
+            <help>com.atex.gong.plugins.pagelayout.SearchElement.resultPage.help</help>
+            <param name="inlineHelp">true</param>
+            <layout name="current" input-template="p.Comment" label="com.atex.gong.plugins.pagelayout.SearchElement.showOnCurrentPage">
+              <param name="comment">com.atex.gong.plugins.pagelayout.SearchElement.showOnCurrentPage.comment</param>
+            </layout>
+            <field name="content-select" input-template="p.ContentSingleSelect" label="com.atex.gong.plugins.pagelayout.SearchElement.selectDepartment">
+              <param name="allowDepartments">true</param>
+              <param name="allowArticles">false</param>
+              <param name="width">314</param>
+              <param name="height">120</param>
+              <idparam-list name="requiredInputTemplateIds">
+                <contentid><externalid>p.siteengine.Site</externalid></contentid>
+                <contentid><externalid>p.siteengine.Page</externalid></contentid>
+              </idparam-list>
+            </field>
+          </field>
+        </layout>
+      </layout>
+
+      <layout name="analytics" input-template="p.Page" label="com.atex.gong.plugins.pagelayout.Analytics.Name">
+        <layout name="analyticsHead" input-template="p.LabeledSection" label="com.atex.gong.plugins.pagelayout.Analytics.Head.Name">
+          <field name="analyticsHead" input-template="p.siteengine.layout.Slot.it">
+            <param name="defaultInheritSetting">true</param>
+            <param name="displayInheritSetting">true</param>
+          </field>
+        </layout>
+        <layout name="analyticsBodyTop" input-template="p.LabeledSection" label="com.atex.gong.plugins.pagelayout.Analytics.bodyTop.Name">
+          <field name="analyticsBodyTop" input-template="p.siteengine.layout.Slot.it">
+            <param name="defaultInheritSetting">true</param>
+            <param name="displayInheritSetting">true</param>
+          </field>
+        </layout>
+        <layout name="analyticsBodyBottom" input-template="p.LabeledSection" label="com.atex.gong.plugins.pagelayout.Analytics.bodyBottom.Name">
+          <field name="analyticsBodyBottom" input-template="p.siteengine.layout.Slot.it">
+            <param name="defaultInheritSetting">true</param>
+            <param name="displayInheritSetting">true</param>
+          </field>
+        </layout>
+      </layout>
+
+    </layout>
+
+    <output-templates mode="www">
+      <id>com.atex.gong.plugins.pagelayout.PageLayout.ot</id>
+    </output-templates>
+  </input-template>
+  </template-definition>

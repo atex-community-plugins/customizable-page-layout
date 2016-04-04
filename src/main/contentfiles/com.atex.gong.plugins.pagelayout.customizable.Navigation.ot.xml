@@ -1,0 +1,29 @@
+<output-template name="com.atex.gong.plugins.pagelayout.customizable.Navigation.ot" input-template="p.siteengine.ElementOutputTemplate">
+	<content-xml>
+		<contentref group="plugin" name="plugindef">
+			<contentid>
+				<major>Content</major>
+				<externalid>plugins.com.atex.gong.plugins.customizable-page-layout-plugin</externalid>
+			</contentid>
+		</contentref>
+
+		<component group="output/modelKeyMode" name="selected">no-cache</component>
+		<contentref group="output/renderer" name="selected">
+			<contentid>
+				<externalid>p.siteengine.VelocityRenderer</externalid>
+			</contentid>
+		</contentref>
+		
+  		<component group="output/renderer" name="templateFileName">com.atex.gong.plugins.pagelayout.customizable.Navigation.vm</component>
+		
+		<contentref group="output/controller" name="selected">
+	      <contentid>
+	        <externalid>p.siteengine.JavaClassRenderController</externalid>
+	      </contentid>
+	    </contentref>
+    
+    <component group="output/controller/selected/renderControllerClass" name="value">com.atex.gong.plugins.pagelayout.customizable.CustomizablePageLayoutRenderController</component>
+	    <component group="preview/controller" name="value">com.polopoly.siteengine.preview.PreviewControllerStandard</component>
+	    
+	</content-xml>	
+</output-template>

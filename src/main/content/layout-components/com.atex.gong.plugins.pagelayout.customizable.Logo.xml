@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template-definition version="1.0" xmlns="http://www.polopoly.com/polopoly/cm/app/xml">
+	<input-template name="com.atex.gong.plugins.pagelayout.customizable.Logo" label="Logo Component">
+		<policy>com.atex.plugins.baseline.policy.BaselinePolicy</policy>
+		<editor>com.polopoly.cm.app.widget.OTopPolicyWidget</editor>
+		<viewer>com.polopoly.cm.app.widget.OTopPolicyWidget</viewer>
+		<type>LayoutElement</type>
+		<content-xml>
+			<component group="polopoly.Content" name="name">Logo Component</component>
+		</content-xml>
+		<param name="templateIcon">text_code_colored.png</param>
+		<param name="renderTemplateIconInSelect">true</param>
+		<editor contextName="orchid_TOCENTRY">com.atex.plugins.baseline.widget.OContentListEntryBasePolicyWidget</editor>
+		<viewer contextName="orchid_TOCENTRY">com.atex.plugins.baseline.widget.OContentListEntryBasePolicyWidget</viewer>
+
+		<param name="ViewState_insert">false</param>
+		<param name="ViewState_refresh">true</param>
+		<param name="EditState_saveAndClose">true</param>
+		<param name="EditState_saveAndInsert">false</param>
+		<param name="EditState_saveAndFastInsert">false</param>
+		<param name="EditState_saveAndView">true</param>
+		<param name="EditState_saveAndEdit">false</param>
+		<param name="EditNewState_saveAndClose">false</param>
+		<param name="EditNewState_saveAndInsert">false</param>
+		<param name="EditNewState_saveAndFastInsert">true</param>
+		<param name="EditNewState_saveAndView">false</param>
+
+		<field name="name" input-template="p.ContentName" label="Name" required="true" />
+
+		<field name="cssClass" input-template="p.TextInput" label="Css class name"/>
+
+		<field name="logoFileManager" input-template="p.SimpleFileUpload" label="Upload a file">
+			<param name="useTree">true</param>
+			<param name="requireUploadButtonClick">true</param>
+			<param name="suffixes">jpeg,jpg,png,gif,svg</param>
+		</field>
+
+
+		<output-templates mode="www">
+			<id>com.atex.gong.plugins.pagelayout.customizable.Logo.ot</id>
+		</output-templates>
+	</input-template>
+</template-definition>

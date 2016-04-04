@@ -1,0 +1,2 @@
+<a class="$content.cssClass.value" href="#link({"contentId": $m.context.page.contentPath.headContent, 'htmlEncodeLink': 'true'})"><img class="logo" src="#file({'contentId': $content.contentId, 'filename': $content.logoFileManager.fullFilePath})" alt="$m.context.site.bean.name">$m.context.site.bean.name</a>
+       
