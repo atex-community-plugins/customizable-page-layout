@@ -44,7 +44,7 @@
       <param name="value_4">footer</param>
     </field>
     
-    <field name="elementCssClassName" input-template="p.TextInput" label="HTML Element Css Class Name"/>
+    <field name="elementCssClassName" input-template="p.TextInput" label="HTML Element CSS Class Name"/>
     <field name="isMainSection" input-template="p.Checkbox" label="Is this section main?"/>
     
     <layout name="columns" input-template="p.ColumnHolder">

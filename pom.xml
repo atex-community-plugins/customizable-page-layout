@@ -211,12 +211,12 @@
             <phase>package</phase>
             <configuration>
               <contentDataFileResources>
-                <files>
+                <!-- <files>
                   <directory>${project.basedir}/src/main/javascript</directory>
                   <includes>
                     <include>**/*.js</include>
                   </includes>
-                </files>
+                </files> -->
                 <!-- Uncomment to include css source files on plugin files content.
                 <files>
                   <directory>${project.basedir}/src/main/css</directory>
@@ -231,13 +231,13 @@
                     <include>**</include>
                   </includes>
                 </files>
-                <!-- Remove this source directory if not used -->
+                <!-- Remove this source directory if not used
                 <files>
                   <directory>${project.build.directory}/generated-contentfiles</directory>
                   <includes>
                     <include>**</include>
                   </includes>
-                </files>
+                </files> -->
               </contentDataFileResources>
             </configuration>
           </execution>

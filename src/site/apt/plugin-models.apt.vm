@@ -4,11 +4,6 @@ Models
 
 * com.atex.gong.plugins.pagelayout.customizable.PageLayout
 
-* com.nzme.pagelayout.CampaignPageLayout
-
-* com.nzme.pagelayout.PageLayout
-
-
 *-----------+------------------+------------------------------------+
 | <<Name>>  | <<Description>>  | <<Type>>                           |
 *-----------+------------------+------------------------------------+

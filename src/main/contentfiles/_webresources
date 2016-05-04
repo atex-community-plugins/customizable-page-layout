@@ -4,6 +4,3 @@
 
 # The example plugin style. Compiled from style.less.
 #/style.css
-
-# The persona callback mapping javascript. Compressed and renamed from persona.js.
-/aimatch_ad_server.min.js

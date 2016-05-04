@@ -20,24 +20,6 @@
         <metadata>
           <referredContent>
             <contentid>
-              <externalid>com.nzme.pagelayout.PageLayout</externalid>
-            </contentid>
-          </referredContent>
-        </metadata>
-      </entry>
-      <entry mode="modify" withMetadata="false">
-        <metadata>
-          <referredContent>
-            <contentid>
-              <externalid>com.nzme.pagelayout.CampaignPageLayout</externalid>
-            </contentid>
-          </referredContent>
-        </metadata>
-      </entry>
-      <entry mode="modify" withMetadata="false">
-        <metadata>
-          <referredContent>
-            <contentid>
               <externalid>com.atex.gong.plugins.pagelayout.customizable.PageLayout</externalid>
             </contentid>
           </referredContent>
