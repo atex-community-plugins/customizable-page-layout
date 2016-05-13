@@ -106,7 +106,14 @@
 					</field>
 				</layout>
 			</layout>
-
+			<layout name="advertising" input-template="p.Page" label="com.atex.gong.plugins.pagelayout.Advertising.Name">
+				<layout name="adSlotsSection" input-template="p.LabeledSection" label="com.atex.gong.plugins.pagelayout.AdSlotsSection.Name">
+					<field name="adSlotsHeader" input-template="p.siteengine.layout.Slot.it">
+						<param name="defaultInheritSetting">true</param>
+						<param name="displayInheritSetting">true</param>
+					</field>
+				</layout>
+			</layout>
 		</layout>
 
 		<output-templates mode="www">
