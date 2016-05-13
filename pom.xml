@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.polopoly</groupId>
     <artifactId>public</artifactId>
-    <version>10.16.0</version>
+    <version>10.16.0-fp1</version>
     <relativePath />
   </parent>
 
