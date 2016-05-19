@@ -114,6 +114,18 @@
 					</field>
 				</layout>
 			</layout>
+			<layout name="sixthpage" input-template="p.Page" label="Theme Options">
+				<param name="lazyInit">true</param>
+				<layout name="resourcelibraries" input-template="p.Column">
+					<layout name="themeSlotComment" input-template="p.Comment" label="Theme Slot">
+						<param name="comment">This will hold the Theme Element</param>
+					</layout>
+					<field name="themeSlot" input-template="p.siteengine.layout.Slot.it">
+						<param name="defaultInheritSetting">true</param>
+						<param name="displayInheritSetting">false</param>
+					</field>
+				</layout>
+			</layout>
 		</layout>
 
 		<output-templates mode="www">
