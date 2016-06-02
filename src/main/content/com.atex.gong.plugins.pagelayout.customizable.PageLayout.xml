@@ -32,7 +32,7 @@
 						</layout>
 					</layout>
 				</layout>
-				
+
 				<layout name="footer-columns" input-template="p.ColumnHolder">
 					<layout name="footer-column" input-template="p.Column">
 						<layout name="footer" input-template="p.LabeledSection" label="Footer">
@@ -48,6 +48,12 @@
 			<layout name="articleHeader" input-template="p.Page" label="com.atex.gong.plugins.pagelayout.ArticleCommon">
 				<layout name="articleHeader-main" input-template="p.LabeledSection" label="com.atex.gong.plugins.pagelayout.ArticleHeaderSlot">
 					<field name="articleHeader" input-template="p.siteengine.layout.Slot.it">
+						<param name="defaultInheritSetting">true</param>
+						<param name="displayInheritSetting">true</param>
+					</field>
+				</layout>
+				<layout name="articleBody-main" input-template="p.LabeledSection" label="com.atex.gong.plugins.pagelayout.ArticleBodySlot">
+					<field name="articleBody" input-template="p.siteengine.layout.Slot.it">
 						<param name="defaultInheritSetting">true</param>
 						<param name="displayInheritSetting">true</param>
 					</field>
